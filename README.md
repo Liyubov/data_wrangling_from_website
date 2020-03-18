@@ -28,4 +28,5 @@ python packages:
       * dataflow
 
 # Data
+The goal is to publish the data from CSV file in Tabular Data https://datahub.io/docs/data-packages/publish-tabular
 The CSV files for daily and monthly variation of gas price are stored in the repo too.
