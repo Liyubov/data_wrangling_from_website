@@ -14,19 +14,18 @@ from datetime import datetime
 
 
 
-def monthlyprice():
+def gas_price(dls, savecsv):
     
-    # monthly price
-    dls = "https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDm.xls"
+    # monthly or daily price extraction    
+    
     resp = requests.get(dls)
     
-    output = open('monthlyprice.xls', 'wb')
+    output = open('price.xls', 'wb')
     output.write(resp.content)
     output.close()
+        
     
-    
-    
-    data = pd.read_excel (r'monthlyprice.xls',sheet_name='Data 1')
+    data = pd.read_excel (r'price.xls',sheet_name='Data 1')
     data.head()
     
     
@@ -41,10 +40,22 @@ def monthlyprice():
     data['Date'] = pd.to_datetime(data['Date'])
     data.head()
     
-    data.to_csv(r'monthlyprice_1.csv')#, index = None, header=True)    
+    data.to_csv(savecsv)#, index = None, header=True)    
     
     return data
 
+# for creating datapackage.json
+# we use datapackage from https://pypi.org/project/datapackage/
+
+
 
 if __name__ == '__main__':
-    monthlyprice() # execute function
+    dls_day = "https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDm.xls"
+    dls_mon = "https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDd.xls"
+
+    save_day = "dailyprice.csv"
+    save_mon = "monthlyprice.csv"
+    
+    gas_price(dls_day, save_day) # execute function for daily price
+    gas_price(dls_mon, save_mon) # execute function for daily price
+    
