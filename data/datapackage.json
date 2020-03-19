@@ -1,0 +1,33 @@
+{
+  "profile": "tabular-data-package",
+  "resources": [
+    {
+      "name": "resource1",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "field1",
+            "type": "date",
+            "format": "default",
+            "title": "Date",
+            "description": "Date format"
+          },
+          {
+            "name": "field2",
+            "type": "number",
+            "format": "default",
+            "title": "Price",
+            "description": "Price in dollars"
+          }
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    "natural gas"
+  ],
+  "name": "datapackage",
+  "title": "datapackage",
+  "homepage": "https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm"
+}
