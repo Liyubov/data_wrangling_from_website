@@ -30,3 +30,6 @@ python packages:
 # Data
 The goal is to publish the data from CSV file in Tabular Data https://datahub.io/docs/data-packages/publish-tabular
 The CSV files for daily and monthly variation of gas price are stored in the repo too.
+Putting data online to google doc folder https://drive.google.com/open?id=1YQlnlTGBEQqILSzMRoUAtTClEx3Iso4G 
+
+
